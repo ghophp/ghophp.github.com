@@ -5,12 +5,11 @@
 	Author: pixelwars
 */
 
+var safeMod = false;
+var portfolioKeyword;
+var $container;
 
 (function ($) {
-
-	var safeMod = false;
-	var portfolioKeyword;
-	var $container;
 	
 	/* DOCUMENT LOAD */
 	$(function() {
@@ -36,6 +35,7 @@
 		// LAYOUT FALLBACK : SAFE MOD
 		safeMod = $('html').attr('data-safeMod') === 'true';
 		safeMod = safeMod || !Modernizr.csstransforms || !Modernizr.csstransforms3d || $(window).width() < 960 || $.browser.msie ;
+		
 		if(safeMod) {
 			
 			$('html').addClass('safe-mod');	
@@ -179,7 +179,10 @@
 		});
 		// ------------------------------
 		
-	
+
+		setTimeout(function(){
+			$(window).trigger('resize');
+		}, 600);
 	});
 	// DOCUMENT READY
 	
@@ -229,6 +232,7 @@
 	// ------------------------------
 	// ADAPT LAYOUT
 	function adaptLayout() {
+
 		var width = safeMod ? $('body').width() : $('.content').width();
 		if(width < 420) {
 			$('html').addClass('w420');	
