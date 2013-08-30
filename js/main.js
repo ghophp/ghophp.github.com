@@ -165,15 +165,14 @@ var $container;
 			var url = $(this).attr('href');
 			var baseUrl = $.address.baseURL();
 			
-			if(url.indexOf(baseUrl) != -1) { // full url
+			if(url.indexOf(baseUrl) != -1) {
 				var total = url.length;
-				detailUrl = url.slice(baseUrl.length+1, total);	
-			} else { // relative url
+				detailUrl = url.slice(baseUrl.length+1, total);
+			} else {
 				detailUrl = url;
 			}
 			
-			$.address.path(portfolioKeyword + '/' + detailUrl );
-			
+			$.address.path(portfolioKeyword + '/' + detailUrl);
 			return false;
 			
 		});
@@ -197,10 +196,10 @@ var $container;
 		// ie8 cover text invisible fix
 		if(jQuery.browser.version.substring(0, 2) == "8." || jQuery.browser.version.substring(0, 2) == "7.")
 		{
-			setTimeout(function() { setActivePage(); },2000);	
+			setTimeout(function() { setActivePage(); },2000);
 		}
 		
-		setTimeout(function() { fitText(); },1000);	
+		setTimeout(function() { fitText(); },1000);
 	
 	};
 	// WINDOW ONLOAD	
@@ -239,7 +238,7 @@ var $container;
 		} else {
 			$('html').removeClass('w420');		
 		}
-	}	
+	}
 	// ------------------------------
 	
 	
@@ -248,14 +247,16 @@ var $container;
 	function setActivePage() {
 		
 			$('.page').removeClass('active').hide();
+			
 			var path = $.address.path();
 			path = path.slice(1, path.length);
 			path = giveDetailUrl() != -1 ? portfolioKeyword : path;
-			if(path == "") {  // if hash tag doesnt exists - go to first page
+			
+			if(path == "") {
 				var firstPage = $('#header ul li').first().find('a').attr('href');
 				path = firstPage.slice(2,firstPage.length);
 				$.address.path(path);
-				}
+			}
 			
 			if(Modernizr.csstransforms && Modernizr.csstransforms3d) { // modern browser
 				$('#'+ path).show().removeClass('animated ').addClass('animated ' + safeModPageInAnimation);
@@ -302,10 +303,10 @@ var $container;
 			}, {
 				width : 600,
 				columns : 3
-			}, { 
+			}, {
 				width : 320,
 				columns : 2
-			}, { 
+			}, {
 				width : 0,
 				columns : 1
 			} ];
@@ -340,10 +341,10 @@ var $container;
 	// PROGRESS BARS
 	function animateBars() {
 		$('.bar').each(function() {
-			 var bar = $(this);
-			 bar.find('.progress').css('width', bar.attr('data-percent') + '%' );
-			});
-	}	
+			var bar = $(this);
+			bar.find('.progress').css('width', bar.attr('data-percent') + '%' );
+		});
+	}
 	// ------------------------------	
 	
 	
@@ -354,7 +355,7 @@ var $container;
 		$(".cover h1").fitText(cover_h1_tune);
 		$(".cover h2").fitText(cover_h2_tune);
 		$(".cover h3").fitText(cover_h3_tune);
-		$(".cover h3 span").fitText(cover_h3_span_tune);	
+		$(".cover h3 span").fitText(cover_h3_span_tune);
 	}
 	// ------------------------------
 	
