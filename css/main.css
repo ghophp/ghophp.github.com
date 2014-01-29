@@ -46,6 +46,16 @@ body, input, textarea, select, button, input[type="button"], input[type="reset"]
 .fancy-ico:before, #fancybox-close:before, .icon, .icon:before, .portfolio-items .mask:before, #header ul li a:before, .widget-twitter ul:before, .widget-twitter ul li:before, .alert:before, .social li a.pinterest:before,  .social li a.instagram:before, .rm-close span:before { font-family: FontAwesome; font-weight: normal; text-align:left; font-style: normal; display: inline-block; text-decoration: inherit; }
 
 
+.fullscreen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 99;
+}
+
 
 /* ------------------------------------------ 
    ---------------------  LAYOUT */

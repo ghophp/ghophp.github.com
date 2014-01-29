@@ -14,6 +14,19 @@ var $container;
 	/* DOCUMENT LOAD */
 	$(function() {
 		
+		$(window).bind('resize', function(e)
+		{
+			window.resizeEvt;
+			$(window).resize(function()
+			{
+				clearTimeout(window.resizeEvt);
+				window.resizeEvt = setTimeout(function()
+				{
+					window.location.reload();
+				}, 250);
+			});
+		});
+
 		// ------------------------------
 		// PORTFOLIO DETAILS
 		// if url contains a portfolio detail url
@@ -51,9 +64,6 @@ var $container;
 		// ------------------------------
 		// ADAPT LAYOUT
 		adaptLayout();
-		$(window).resize(function() {
-			adaptLayout();
-		});
 		// ------------------------------
 		
 		
@@ -98,9 +108,6 @@ var $container;
 				});
 				
 				setMasonry();
-				$(window).resize(function() {
-					setTimeout(function() { setMasonry(); }, 600);	
-				});
 				
 				// filter items when filter link is clicked
 				$('#filters a').click(function(){
@@ -115,32 +122,17 @@ var $container;
 		}
 		// ------------------------------
 		
-		
-		
-		
 		// ------------------------------
 		// SCROLLBARS
 		if(!safeMod) {
-			
-			setupScrollBars();
-	
-			// REFRESH SCROLLBARS ON RESIZE
-			$(window).resize(function() {
-				refreshScrollBars();
-				if($(window).width() < 960) {
-					location.reload(true);	
-				}
-			});
-		
+			setupScrollBars();		
 		}
 		// ------------------------------
 	
-		
 		// ------------------------------
 		// FIT TEXT
 		fitText();
 		// ------------------------------
-		
 		
 		// ------------------------------
 		// LIGHTBOX
@@ -151,9 +143,6 @@ var $container;
 		// SKILL BARS
 		animateBars();
 		// ------------------------------
-		
-		
-		
 		
 		// ------------------------------
 		// PORTFOLIO DETAILS
@@ -176,12 +165,12 @@ var $container;
 			return false;
 			
 		});
-		// ------------------------------
-		
 
+		showLoader();
 		setTimeout(function(){
-			$(window).trigger('resize');
-		}, 600);
+			$('.fullscreen-loader').fadeOut();
+			hideLoader();
+		}, 1000);
 	});
 	// DOCUMENT READY
 	
