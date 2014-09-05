@@ -170,6 +170,14 @@ var $container;
 		setTimeout(function(){
 			$('.fullscreen-loader').fadeOut();
 			hideLoader();
+
+			setTimeout(function(){
+
+				if (!$('#rm-container').hasClass('rm-open')) {
+					$('.rm-button-open').click();
+				}
+				
+			}, 3000);
 		}, 1000);
 	});
 	// DOCUMENT READY
