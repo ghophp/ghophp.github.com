@@ -605,5 +605,24 @@ body { color:#333; }
 
 /* --------------------------------------- */
 
+.social-buttons-share {
+  display: block;
+  width: 172px;
+  height: 22px;
+  margin: 0 auto;
+}
 
+.linkedin-button {
+  display: block;
+  width: 62px;
+  height: 22px;
+  float: left;
+  margin-right: 10px;
+}
 
+.facebook-button {
+  display: block;
+  width: 96px;
+  height: 22px;
+  float: left;
+}
