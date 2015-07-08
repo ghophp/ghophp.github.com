@@ -19,6 +19,6 @@ h4.about-text { font-weight: 300; }
 
 .content h2, .content h3 { position: relative; }
 .content h2:before { content: ""; position:absolute; top: 50%; left: 0; display: block; width: 100%; border-bottom: 1px solid #ccc; z-index: -1; }
-.content h2 span { font-weight: 800; padding: .2em .4em; color: #fff; background: #333; border-radius: 4px; }
+.content h2 span { font-weight: 800; padding: .2em .4em; color: #fff; background: #333; /*border-radius: 4px;*/ }
 h4.about-text { font-weight: 300; }
 .label { font-weight: 800; padding:0; color: #333; background: none; border-bottom: 3px solid #333; }
